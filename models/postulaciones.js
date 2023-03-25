@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+    postulaciones.belongsTo(models.usuario, {foreignKey: 'id_usuario'});
+    postulaciones.belongsTo(models.ofertaEmpleo, {foreignKey: 'id_ofertaEmpleo'});
     }
   }
   postulaciones.init({
