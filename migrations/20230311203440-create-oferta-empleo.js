@@ -3,13 +3,10 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('ofertaEmpleos', {
-      id: {
+      id_ofertaEmpleo: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      id_ofertaEmpleo: {
         type: Sequelize.INTEGER
       },
       titulo: {
@@ -24,13 +21,16 @@ module.exports = {
       ubicacion: {
         type: Sequelize.STRING
       },
+      tipoDeContrato: {
+        type: Sequelize.STRING
+      },
       id_detalleOferta: {
         type: Sequelize.INTEGER,
         references:{
           model: {
             tableName: 'detalleOferta',
           },
-          key:'id'
+          key:'id_detalleOferta'
         },
         allowNull: false
       },
@@ -40,7 +40,7 @@ module.exports = {
           model: {
             tableName: 'usuarios',
           },
-          key:'id'
+          key:'id_usuario'
         },
         allowNull: false
       },

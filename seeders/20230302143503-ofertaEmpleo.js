@@ -6,7 +6,8 @@ module.exports = {
         titulo: "busco ayudante",
         salario: "salario minimo",
         descripcion: "requiero ayudante general para obra de construccion en popayan",
-        
+        ubicacion: "calle 58",
+        tipoDeContrato: "indefinido",
         id_detalleOferta: 1,
         id_usuario: 1
       },
@@ -16,6 +17,7 @@ module.exports = {
         salario: "salario minimo",
         descripcion: "requiero servicio de maestro de obra para conjunto cerrado en popayan",
         ubicacion: "calle 66",
+        tipoDeContrato: "indefinido",
         id_detalleOferta: 2,
         id_usuario: 2
       },
@@ -25,6 +27,7 @@ module.exports = {
         salario: "salario minimo",
         descripcion: "necesito persona para trabajar en area de contruccion con experiencia",
         ubicacion: "calle 67",
+        tipoDeContrato: "indefinido",
         id_detalleOferta: 3,
         id_usuario: 3
       },

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const rols= require ("../models").rols;
+const rols= require ("../models").rol;
 
 module.exports=
 {   
@@ -11,10 +11,10 @@ module.exports=
     },
 
 
-    ListarIdRol(req, res) {
+  ListarIdRol(req, res) {
    return rols.findAll({
     where: {
-      id: req.params.id 
+      id_rol: req.params.id 
     }
     })
     .then(rols => res.status(200).send(rols))
@@ -37,7 +37,7 @@ module.exports=
      
 
     EliminarRol(req,res) {
-      return rol.destroy({
+      return rols.destroy({
         where: {
             id: req.params.id
           }

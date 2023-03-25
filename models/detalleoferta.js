@@ -14,11 +14,27 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   detalleOferta.init({
-    id_DetalleOferta: DataTypes.INTEGER,
-    id_categoria: DataTypes.INTEGER
-  }, {
+    id_detalleOferta: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    id_categoria:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'categoria',
+        },
+        key: 'id_categoria'
+      },
+      allowNull: false
+    },
+  },
+  {
     sequelize,
     modelName: 'detalleOferta',
+    tableName: 'detalleOferta'
   });
   return detalleOferta;
 };

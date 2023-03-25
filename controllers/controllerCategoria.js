@@ -6,13 +6,13 @@ module.exports={
     ListarCategoria(req, res) {
       return categoria.findAll({})
       .then(categoria => res.status(200).send(categoria))
-    .catch(error => res.status(400).send(error));
+     .catch(error => res.status(400).send(error));
     },
 
     ListarIdCategoria(req, res) {
    return categoria.findAll({
     where: {
-      id: req.params.id 
+      id_categoria: req.params.id 
     }
     })
     .then(categoria => res.status(200).send(categoria))

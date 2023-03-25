@@ -16,13 +16,30 @@ module.exports=
     ListarIdExperiencia(req, res) {
    return experiencia.findAll({
     where: {
-      id: req.params.id 
+      id_experiencia: req.params.id 
     }
     })
     .then(experiencia => res.status(200).send(experiencia))
     .catch(error => res.status(400).send(error));
     },
 
+    UpdateExperiencia(req, res) {
+      return experiencia.update({
+        
+        titulo: req.body.titulo,
+        descripcion: req.body.descripcion,
+        lugarDeTrabajo: req.body.lugarTrabajo,
+        exprienciaDeTrabajo: req.body.exprienciaDeTrabajo
+      
+      }, {
+          where: {
+              id_experiencia: req.params.id,
+          },
+      })
+
+      .then((experiencia) => { res.json(experiencia);})
+          .catch(error => res.status(400).send(error))
+  },
 
    GuardarExperiencia(req, res){
         let experiencia = experiencia  .create({

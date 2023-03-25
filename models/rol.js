@@ -14,13 +14,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   rol.init({
-    id_rol: DataTypes.INTEGER,
+    id_rol: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     administrador: DataTypes.STRING,
     postulante: DataTypes.STRING,
     empleador: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'rol',
+    tableName: 'rols'
   });
   return rol;
 };

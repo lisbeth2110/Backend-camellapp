@@ -14,13 +14,39 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   postulaciones.init({
-    id_postulaciones: DataTypes.INTEGER,
+    id_postulaciones: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    id_usuario:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'usuarios',
+        },
+        key: 'id_usuario'
+      },
+      allowNull: false
+    },
+    id_ofertaEmpleo:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'ofertaEmpleos',
+        },
+        key: 'id_ofertaEmpleo'
+      },
+      allowNull: false
+    },
     estado: DataTypes.STRING,
     fecha: DataTypes.STRING,
-    id_ofertaEmpleo: DataTypes.INTEGER
+
   }, {
     sequelize,
     modelName: 'postulaciones',
+    tableName: 'postulaciones'
   });
   return postulaciones;
 };

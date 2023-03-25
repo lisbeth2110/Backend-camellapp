@@ -14,7 +14,7 @@ module.exports=
     ListarIdPostulaciones(req, res) {
    return postulaciones.findAll({
     where: {
-      id: req.params.id 
+      id_postulaciones: req.params.id 
     }
     })
     .then(postulaciones => res.status(200).send(postulaciones))

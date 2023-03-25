@@ -14,12 +14,38 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   intereses.init({
-    id_intereses: DataTypes.INTEGER,
-    id_categoria: DataTypes.INTEGER,
-    id_usuario: DataTypes.INTEGER
+    id_intereses: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    id_categoria:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'categoria',
+        },
+        key: 'id_categoria'
+      },
+      allowNull: false
+    },
+
+    id_usuario:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'usuarios',
+        },
+        key: 'id_usuario'
+      },
+      allowNull: false
+    },
+  
   }, {
     sequelize,
     modelName: 'intereses',
+    tableName: 'intereses'
   });
   return intereses;
 };

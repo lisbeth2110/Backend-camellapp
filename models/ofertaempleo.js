@@ -12,22 +12,45 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-    ofertaEmpleo.belongsTo(models.categoria, {foreignKey: 'id_categoria'});  
-    ofertaEmpleo.hasMany(models.usuario, {foreignKey: 'id_ofertaEmpleo'});
-    ofertaEmpleo.belongsTo(models.usuario, {foreignKey: 'id_usuario'});  
+
     }
   }
   ofertaEmpleo.init({
-    id_ofertaEmpleo: DataTypes.INTEGER,
+    id_ofertaEmpleo: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     titulo: DataTypes.STRING,
-    descripcion: DataTypes.STRING,
-    TipoDeContrato: DataTypes.STRING,
     salario: DataTypes.FLOAT,
-    horario: DataTypes.STRING,
-    id_DetalleOferta: DataTypes.INTEGER
+    descripcion: DataTypes.STRING,
+    ubicacion: DataTypes.STRING,
+    tipoDeContrato: DataTypes.STRING,
+    id_detalleOferta:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'detalleOferta',
+        },
+        key: 'id_detalleOferta'
+      },
+      allowNull: false
+    },
+      id_usuario:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'usuarios',
+        },
+        key: 'id_usuario'
+      },
+      allowNull: false
+    },
   }, {
     sequelize,
-    modelName: 'ofertaEmpleos',
+    modelName: 'ofertaEmpleo',
+    tableName: 'ofertaEmpleos'
   });
   return ofertaEmpleo;
 };

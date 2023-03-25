@@ -11,25 +11,29 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-    usuario.belongsTo(models.categoria, {foreignKey: 'id_categoria'});
-    usuario.belongsTo(models.ofertaEmpleo, {foreignKey: 'id_ofertaEmpleo'});
-    usuario.hasMany(models.ofertaEmpleo, {foreignKey: 'id_usuario'});
+
     }
   }
   usuario.init({
-    id_usuario: DataTypes.INTEGER,
+    id_usuario: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     nombres: DataTypes.STRING,
     apellidos: DataTypes.STRING,
-    nacionalida: DataTypes.STRING,
+    nacionalidad: DataTypes.STRING,
     documento: DataTypes.FLOAT,
     fotoPerfil: DataTypes.STRING,
     telefono: DataTypes.FLOAT,
     direccion: DataTypes.STRING,
     username: DataTypes.STRING,
-    pasword: DataTypes.STRING
+    password: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'usuario',
+    tableName: 'usuarios'
   });
   return usuario;
 };

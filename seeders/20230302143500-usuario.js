@@ -10,7 +10,7 @@ module.exports = {
           fotoPerfil: "url",
           telefono: "3246766502",
           direccion: "v/ el cairo - cajibio",
-          userName: "leyder",
+          username: "leyder",
           password: "12345678"
         },
         {
@@ -22,7 +22,7 @@ module.exports = {
           fotoPerfil: "url",
           telefono: "3218759455",
           direccion: "cra9 n 63",
-          userName: "jhonc",
+          username: "jhonc",
           password: "12345678"
         },
         {
@@ -34,7 +34,7 @@ module.exports = {
           fotoPerfil: "url",
           telefono: "3242641297",
           direccion: "cll 5 n34",
-          userName: "yagami",
+          username: "yagami",
           password: "12345678"
         },    
       ]

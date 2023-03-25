@@ -14,7 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   experiencia.init({
-    id_experiencia: DataTypes.INTEGER,
+    id_experiencia: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    id_usuario:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'usuarios',
+        },
+        key: 'id_usuario'
+      },
+      allowNull: false
+    },
     titulo: DataTypes.STRING,
     descripcion: DataTypes.STRING,
     lugarDeTrabajo: DataTypes.STRING,
@@ -22,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'experiencia',
+    tableName: 'experiencia'
   });
   return experiencia;
 };

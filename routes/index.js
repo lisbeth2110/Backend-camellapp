@@ -16,14 +16,16 @@ router.get('/categoria/:id', controllerCategoria.ListarIdCategoria);
 router.delete('/eliminarCategoria/:id',controllerCategoria.EliminarCategoria);
 
 /* rutas experiencia */
-router.get('/listarExperiencia',controllerExperiencia.ListarExperiencia);
+router.get('/lstarExperienciai',controllerExperiencia.ListarExperiencia);
 router.post('/guardarExperiencia',controllerExperiencia.GuardarExperiencia);
+router.put('/editarExperiencia/:id',controllerExperiencia.UpdateExperiencia);
 router.get('/experiencia/:id', controllerExperiencia.ListarIdExperiencia);
 router.delete('/eliminarExperiencia/:id',controllerExperiencia.EliminarExperiencia);
 
 /* rutas ofertaEmpleo */
 router.get('/listarOfertaEmpleo',controllerOfertaEmpleo.ListarOfertaEmpleo);
 router.post('/guardarOfertaEmpleo',controllerOfertaEmpleo.GuardarOfertaEmpleo);
+router.put('/editarOfertaEmpleo/:id', controllerOfertaEmpleo.UpdateofertaEmpleo);
 router.get('/ofertaEmpleo/:id', controllerOfertaEmpleo.ListarIdOfertaEmpleo);
 router.delete('/eliminarOfertaEmpleo/:id',controllerOfertaEmpleo.EliminarOfertaEmpleo);
 
@@ -45,14 +47,5 @@ router.get('/listarUsuario',controllerUsuario.ListarUsuario);
 router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
 router.get('/usuario/:id', controllerUsuario.ListarIdUsuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
-
-
-/* rutas consultas */
-router.get('/consultaOfertaxCategoria', controllerConsultas.consultaOfertaxCategoria);
-router.get('/consultaUsuariosxCategoria', controllerConsultas.consultaUsuariosxCategoria);
-router.get('/consultaUsuariosxOfertaempleo', controllerConsultas.consultaUsuariosxOfertaempleo);
-router.get('/consultaOfertaxUsuario', controllerConsultas.consultaOfertaxUsuario);
-
-
 
 module.exports = router;
