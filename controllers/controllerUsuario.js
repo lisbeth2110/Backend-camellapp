@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const { QueryError } = require('sequelize');
 const usuarios = require ("../models").usuario;
 
 module.exports=
@@ -38,12 +39,32 @@ module.exports=
             return(usuarios.id); 
             
     },
+    Updateusuario(req, res) {
+      return usuarios.update({
+        nombres: req.body.nombres,
+        apellidos: req.body.apellidos,
+        nacionalidad: req.body.nacionalidad,
+        documento: req.body.documento,
+        fotoPerfil: req.body.fotoPerfil,
+        telefono: req.body.telefono,
+        direccion: req.body.direccion,
+        username: req.body.username,
+        password: req.body.password
+      }, {
+          where: {
+              id_usuario: req.params.id,
+          },
+      })
+
+      .then((usuarios) => { res.json(usuarios);})
+          .catch(error => res.status(400).send(error))
+  },
     
      
-    EliminarUsuario(req,res) {
+    EliminarUsuario(req, res) {
       return usuarios.destroy({
         where: {
-            id: req.params.id
+            id_usuario: req.params.id
           }
     })
     .then(() => res.status(200).send(true))

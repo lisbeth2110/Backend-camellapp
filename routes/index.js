@@ -13,6 +13,7 @@ const controllerUsuario = require ('../controllers/controllerUsuario');
 router.get('/listarCategoria',controllerCategoria.ListarCategoria);
 router.post('/guardarCategoria',controllerCategoria.GuardarCategoria);
 router.get('/categoria/:id', controllerCategoria.ListarIdCategoria);
+router.put('/editarcategoria/:id', controllerCategoria. Updatecategoria);
 router.delete('/eliminarCategoria/:id',controllerCategoria.EliminarCategoria);
 
 /* rutas experiencia */
@@ -29,23 +30,25 @@ router.put('/editarOfertaEmpleo/:id', controllerOfertaEmpleo.UpdateofertaEmpleo)
 router.get('/ofertaEmpleo/:id', controllerOfertaEmpleo.ListarIdOfertaEmpleo);
 router.delete('/eliminarOfertaEmpleo/:id',controllerOfertaEmpleo.EliminarOfertaEmpleo);
 
-
 /* rutas postulaciones */
 router.get('/listarPostulaciones',controllerPostulaciones.ListarPostulaciones);
 router.post('/guardarPostulaciones',controllerPostulaciones.GuardarPostulaciones);
 router.get('/Postulaciones/:id', controllerPostulaciones.ListarIdPostulaciones);
+router.put('/editarPostulaciones/:id', controllerPostulaciones.Updatepostulaciones);
 router.delete('/eliminarPostulaciones/:id',controllerPostulaciones.EliminarPostulaciones);
 
 /* rutas rol */
 router.get('/listarRol',controllerRol.ListarRol);
 router.post('/guardarRol',controllerRol.GuardarRol);
 router.get('/rol/:id', controllerRol.ListarIdRol);
+router.put('/editarrol/:id', controllerRol.Updaterol);
 router.delete('/eliminarRol/:id',controllerRol.EliminarRol);
 
 /* rutas usuario */
 router.get('/listarUsuario',controllerUsuario.ListarUsuario);
 router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
 router.get('/usuario/:id', controllerUsuario.ListarIdUsuario);
+router.put('/editarusuario/:id', controllerUsuario.Updateusuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
 
 module.exports = router;

@@ -33,12 +33,26 @@ module.exports=
         .catch(error => res.status(400).send(error));
             return(postulacion.id); 
     },
+    Updatepostulaciones(req, res) {
+      return postulacion.update({
+        id_usuario: req.body.id_usuario,
+        fecha: req.body.fecha,
+        estado: req.body.estado,
+        id_ofertaEmpleo: req.body.id_ofertaEmpleo
+      }, {
+          where: {
+              id_postulaciones: req.params.id,
+          },
+      })
 
+      .then((postulacion) => { res.json(postulacion);})
+          .catch(error => res.status(400).send(error))
+  },
      
     EliminarPostulaciones(req,res) {
       return postulacion.destroy({
         where: {
-            id: req.params.id
+            id_postulaciones: req.params.id
           }
     })
     .then(() => res.status(200).send(true))

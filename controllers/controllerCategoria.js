@@ -19,6 +19,21 @@ module.exports={
     .catch(error => res.status(400).send(error));
     },
 
+    Updatecategoria(req, res) {
+      return categorias.update({
+
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion
+      }, {
+          where: {
+              id_categoria: req.params.id,
+          },
+      })
+
+      .then((categorias) => { res.json(categorias);})
+          .catch(error => res.status(400).send(error))
+  },
+
    GuardarCategoria(req, res){
          categoria = categorias  .create({
                 nombre : req.body.nombre,
@@ -34,7 +49,7 @@ module.exports={
     EliminarCategoria(req,res) {
       return categorias.destroy({
         where: {
-            id: req.params.id
+            id_categoria: req.params.id
           }
     })
     .then(() => res.status(200).send(true))

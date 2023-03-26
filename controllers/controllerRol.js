@@ -34,12 +34,26 @@ module.exports=
             return(rols.id); 
             
     },
+    Updaterol(req, res) {
+      return rols.update({
+        administrador : req.body.administrador,
+        postulante: req.body.postulante,
+        empleador: req.body.empleador
+      }, {
+          where: {
+              id_rol: req.params.id,
+          },
+      })
+
+      .then((rols) => { res.json(rols);})
+          .catch(error => res.status(400).send(error))
+  },
      
 
     EliminarRol(req,res) {
       return rols.destroy({
         where: {
-            id: req.params.id
+            id_rol: req.params.id
           }
     })
     .then(() => res.status(200).send(true))

@@ -21,6 +21,7 @@ module.exports=
     .then(ofertaEmpleos => res.status(200).send(ofertaEmpleos))
     .catch(error => res.status(400).send(error));
     },
+
     UpdateofertaEmpleo(req, res) {
       return ofertaEmpleos.update({
         titulo: req.body.titulo,
@@ -32,7 +33,7 @@ module.exports=
         id_usuario: req.body.id_usuario
       }, {
           where: {
-              id_ofertaEmpleos: req.params.id,
+              id_ofertaEmpleo: req.params.id,
           },
       })
 
@@ -60,7 +61,7 @@ module.exports=
     EliminarOfertaEmpleo(req,res) {
       return ofertaEmpleos.destroy({
         where: {
-            id: req.params.id
+            id_ofertaEmpleo: req.params.id
           }
     })
     .then(() => res.status(200).send(true))

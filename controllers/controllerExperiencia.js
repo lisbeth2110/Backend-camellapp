@@ -25,7 +25,7 @@ module.exports=
 
     UpdateExperiencia(req, res) {
       return experiencias.update({
-        
+        id_usuario: req.body.id_usuario,
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         lugarDeTrabajo: req.body.lugarTrabajo,
@@ -42,11 +42,11 @@ module.exports=
   },
 
    GuardarExperiencia(req, res){
-        experiencia = experiencias  .create({
+               experiencia = experiencias  .create({
                 id_usuario: req.body.id_usuario,
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
-                lugarDeTrabajo: req.body.lugarTrabajo,
+                lugarDeTrabajo: req.body.lugarDeTrabajo,
                 exprienciaDeTrabajo: req.body.exprienciaDeTrabajo
               
              
@@ -56,13 +56,10 @@ module.exports=
             return(experiencias.id); 
             
     },
-
-
-     
     EliminarExperiencia(req,res) {
       return experiencias.destroy({
         where: {
-            id: req.params.id
+            id_experiencia: req.params.id
           }
     })
     .then(() => res.status(200).send(true))
