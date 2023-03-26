@@ -23,7 +23,7 @@ module.exports=
 
 
    GuardarRol(req, res){
-        let rols = rols  .create({
+        rol = rols  .create({
                 administrador : req.body.administrador,
                 postulante: req.body.postulante,
                 empleador: req.body.empleador

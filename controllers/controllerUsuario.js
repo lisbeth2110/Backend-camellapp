@@ -21,7 +21,7 @@ module.exports=
 
 
    GuardarUsuario(req, res){
-        let usuarios = usuarios  .create({
+        usuario = usuarios  .create({
                 nombres: req.body.nombres,
                 apellidos: req.body.apellidos,
                 nacionalidad: req.body.nacionalidad,

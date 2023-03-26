@@ -16,7 +16,7 @@ router.get('/categoria/:id', controllerCategoria.ListarIdCategoria);
 router.delete('/eliminarCategoria/:id',controllerCategoria.EliminarCategoria);
 
 /* rutas experiencia */
-router.get('/lstarExperienciai',controllerExperiencia.ListarExperiencia);
+router.get('/listarExperiencia',controllerExperiencia.ListarExperiencia);
 router.post('/guardarExperiencia',controllerExperiencia.GuardarExperiencia);
 router.put('/editarExperiencia/:id',controllerExperiencia.UpdateExperiencia);
 router.get('/experiencia/:id', controllerExperiencia.ListarIdExperiencia);

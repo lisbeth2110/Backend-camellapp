@@ -1,38 +1,38 @@
 const Sequelize = require('sequelize');
-const categoria= require ("../models").categoria;
+const categorias= require ("../models").categoria;
 ; 
 
 module.exports={   
     ListarCategoria(req, res) {
-      return categoria.findAll({})
-      .then(categoria => res.status(200).send(categoria))
+      return categorias.findAll({})
+      .then(categorias => res.status(200).send(categorias))
      .catch(error => res.status(400).send(error));
     },
 
     ListarIdCategoria(req, res) {
-   return categoria.findAll({
+   return categorias.findAll({
     where: {
       id_categoria: req.params.id 
     }
     })
-    .then(categoria => res.status(200).send(categoria))
+    .then(categorias => res.status(200).send(categorias))
     .catch(error => res.status(400).send(error));
     },
 
    GuardarCategoria(req, res){
-        let categoria = categoria  .create({
+         categoria = categorias  .create({
                 nombre : req.body.nombre,
                 descripcion: req.body.descripcion
              
-        }).then(categoria => res.status(200).send(categoria))
+        }).then(categorias => res.status(200).send(categorias))
         .catch(error => res.status(400).send(error));
 
-            return(categoria.id); 
+            return(categorias.id); 
             
     },
      
     EliminarCategoria(req,res) {
-      return categoria.destroy({
+      return categorias.destroy({
         where: {
             id: req.params.id
           }

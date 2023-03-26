@@ -41,7 +41,7 @@ module.exports=
   },
 
    GuardarOfertaEmpleo(req, res){
-        let ofertaEmpleos = ofertaEmpleos.create({
+         ofertaEmpleo = ofertaEmpleos.create({
             titulo: req.body.titulo,
             salario: req.body.salario,
             descripcion: req.body.descripcion,
