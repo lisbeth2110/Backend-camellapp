@@ -35,7 +35,7 @@ module.exports={
   },
 
    GuardarCategoria(req, res){
-         categoria = categorias  .create({
+         categorias = categorias  .create({
                 nombre : req.body.nombre,
                 descripcion: req.body.descripcion
              
