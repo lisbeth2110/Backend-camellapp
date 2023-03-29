@@ -18,7 +18,6 @@ module.exports={
     .then(categorias => res.status(200).send(categorias))
     .catch(error => res.status(400).send(error));
     },
-
     Updatecategoria(req, res) {
       return categorias.update({
 
@@ -29,21 +28,18 @@ module.exports={
               id_categoria: req.params.id,
           },
       })
-
       .then((categorias) => { res.json(categorias);})
           .catch(error => res.status(400).send(error))
   },
 
    GuardarCategoria(req, res){
-         categorias = categorias  .create({
+         categoria = categorias  .create({
                 nombre : req.body.nombre,
                 descripcion: req.body.descripcion
              
         }).then(categorias => res.status(200).send(categorias))
         .catch(error => res.status(400).send(error));
-
             return(categorias.id); 
-            
     },
      
     EliminarCategoria(req,res) {
