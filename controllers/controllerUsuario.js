@@ -26,6 +26,7 @@ module.exports=
                 nombres: req.body.nombres,
                 apellidos: req.body.apellidos,
                 nacionalidad: req.body.nacionalidad,
+                correo: req.body.correo,
                 documento: req.body.documento,
                 fotoPerfil: req.body.fotoPerfil,
                 telefono: req.body.telefono,
@@ -43,7 +44,8 @@ module.exports=
       return usuarios.update({
         nombres: req.body.nombres,
         apellidos: req.body.apellidos,
-        nacionalidad: req.body.nacionalidad,
+        correo: req.body.nacionalidad,
+        correo: req.body.correo,
         documento: req.body.documento,
         fotoPerfil: req.body.fotoPerfil,
         telefono: req.body.telefono,
