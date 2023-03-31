@@ -16,7 +16,7 @@ module.exports = {
           model: {
             tableName: 'rols',
           },
-          key:'id_rol'
+          key: 'id_rol'
         },
         allowNull: false
       },

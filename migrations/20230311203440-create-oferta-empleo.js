@@ -24,6 +24,7 @@ module.exports = {
       tipoDeContrato: {
         type: Sequelize.STRING
       },
+      
       id_detalleOferta: {
         type: Sequelize.INTEGER,
         references:{

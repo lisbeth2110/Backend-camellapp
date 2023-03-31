@@ -4,13 +4,11 @@ const experiencias= require ("../models").experiencia;
 module.exports=
 
 {   
-
     ListarExperiencia(req, res) {
       return experiencias.findAll({})
       .then(experiencias => res.status(200).send(experiencias))
     .catch(error => res.status(400).send(error));
     },
-
 
 
     ListarIdExperiencia(req, res) {

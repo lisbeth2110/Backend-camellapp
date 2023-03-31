@@ -8,6 +8,8 @@ const controllerPostulaciones = require ('../controllers/controllerPostulaciones
 const controllerRol = require ('../controllers/controllerRol');
 const controllerUsuario = require ('../controllers/controllerUsuario');
 const controllerConsultas = require ('../controllers/controllerConsultas');
+const controllerdetalleOferta = require ('../controllers/controllerDetalleOferta');
+const controllerRolusuario = require ('../controllers/controllerRolusuario');
 
 
 /* rutas categoria */
@@ -51,6 +53,19 @@ router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
 router.get('/usuario/:id', controllerUsuario.ListarIdUsuario);
 router.put('/editarusuario/:id', controllerUsuario.Updateusuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
+
+/* rutas detalle oferta */
+router.get('/listardetalleoferta',controllerdetalleOferta.Listardetalleoferta);
+router.post('/guardardetalleoferta',controllerdetalleOferta.GuardarDetalleoferta);
+router.get('/detalleoferta/:id', controllerdetalleOferta.ListarIdDetalleoferta);
+router.delete('/eliminardetalleoferta/:id',controllerdetalleOferta.EliminarDetalleoferta);
+
+/* rutas rol usuario */
+
+router.get('/listarRolUsuario',controllerRolusuario.ListarRolusuario);
+router.post('/guardaRolusuario',controllerRolusuario.GuardarRolusuario);
+router.get('/Rolusuario/:id', controllerRolusuario.ListarIdRolusuario);
+router.delete('/eliminarRolusuario/:id',controllerRolusuario.EliminarRolusuario);
 
 /* rutas de consultas */
 
