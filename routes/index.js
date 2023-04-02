@@ -8,7 +8,6 @@ const controllerPostulaciones = require ('../controllers/controllerPostulaciones
 const controllerRol = require ('../controllers/controllerRol');
 const controllerUsuario = require ('../controllers/controllerUsuario');
 const controllerConsultas = require ('../controllers/controllerConsultas');
-const controllerdetalleOferta = require ('../controllers/controllerDetalleOferta');
 const controllerRolusuario = require ('../controllers/controllerRolusuario');
 
 
@@ -54,12 +53,6 @@ router.get('/usuario/:id', controllerUsuario.ListarIdUsuario);
 router.put('/editarusuario/:id', controllerUsuario.Updateusuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
 
-/* rutas detalle oferta */
-router.get('/listardetalleoferta',controllerdetalleOferta.Listardetalleoferta);
-router.post('/guardardetalleoferta',controllerdetalleOferta.GuardarDetalleoferta);
-router.get('/detalleoferta/:id', controllerdetalleOferta.ListarIdDetalleoferta);
-router.delete('/eliminardetalleoferta/:id',controllerdetalleOferta.EliminarDetalleoferta);
-
 /* rutas rol usuario */
 
 router.get('/listarRolUsuario',controllerRolusuario.ListarRolusuario);
@@ -76,9 +69,6 @@ router.get('/consultaOfertaEmpleoXpostulaciones', controllerConsultas.consultaOf
 router.get('/consultausuarioXcategoria', controllerConsultas.consultausuarioXcategoria);
 router.get('/consultaofertaXcategoria', controllerConsultas.consultaofertaXcategoria);
 router.get('/consultaUsuarioxRol', controllerConsultas.consultaUsuarioxRol);
-
-
-
 
 
 module.exports = router;
