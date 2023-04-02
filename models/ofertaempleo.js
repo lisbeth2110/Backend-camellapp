@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
    ofertaEmpleo.belongsTo(models.usuario, {foreignKey: 'id_usuario'});
-   ofertaEmpleo.hasMany(models.detalleOferta, {foreignKey: 'id_ofertaEmpleo'});
+   ofertaEmpleo.belongsTo(models.categoria, {foreignKey: 'id_categoria'});
    ofertaEmpleo.hasMany(models.postulaciones, {foreignKey: 'id_ofertaEmpleo'});
     }
   }
@@ -28,13 +28,14 @@ module.exports = (sequelize, DataTypes) => {
     descripcion: DataTypes.STRING,
     ubicacion: DataTypes.STRING,
     tipoDeContrato: DataTypes.STRING,
-    id_detalleOferta:{
+
+    id_categoria:{
       type: DataTypes.INTEGER,
       references:{
         model: {
-          tableName:'detalleOferta',
+          tableName:'categoria',
         },
-        key: 'id_detalleOferta'
+        key: 'id_categoria'
       },
       allowNull: false
     },

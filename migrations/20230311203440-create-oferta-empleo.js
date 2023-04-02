@@ -24,13 +24,14 @@ module.exports = {
       tipoDeContrato: {
         type: Sequelize.STRING
       },
-      id_detalleOferta: {
+      
+      id_categoria: {
         type: Sequelize.INTEGER,
         references:{
           model: {
-            tableName: 'detalleOferta',
+            tableName: 'categoria',
           },
-          key:'id_detalleOferta'
+          key:'id_categoria'
         },
         allowNull: false
       },
