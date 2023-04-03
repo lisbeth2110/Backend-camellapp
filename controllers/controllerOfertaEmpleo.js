@@ -29,7 +29,7 @@ module.exports=
         descripcion: req.body.descripcion,
         ubicacion: req.body.ubicacion,
         tipoDeContrato: req.body.tipoDeContrato,
-        id_detalleOferta: req.body.id_detalleOferta,
+        id_categoria: req.body.id_categoria,
         id_usuario: req.body.id_usuario
       }, {
           where: {
@@ -48,7 +48,7 @@ module.exports=
             descripcion: req.body.descripcion,
             ubicacion: req.body.ubicacion,
             tipoDeContrato: req.body.tipoDeContrato,
-            id_detalleOferta: req.body.id_detalleOferta,
+            id_categoria: req.body.id_categoria,
             id_usuario: req.body.id_usuario
                 
              

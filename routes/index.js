@@ -7,6 +7,8 @@ const controllerOfertaEmpleo = require ('../controllers/controllerOfertaEmpleo')
 const controllerPostulaciones = require ('../controllers/controllerPostulaciones');
 const controllerRol = require ('../controllers/controllerRol');
 const controllerUsuario = require ('../controllers/controllerUsuario');
+const controllerConsultas = require ('../controllers/controllerConsultas');
+const controllerRolusuario = require ('../controllers/controllerRolusuario');
 
 
 /* rutas categoria */
@@ -50,5 +52,23 @@ router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
 router.get('/usuario/:id', controllerUsuario.ListarIdUsuario);
 router.put('/editarusuario/:id', controllerUsuario.Updateusuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
+
+/* rutas rol usuario */
+
+router.get('/listarRolUsuario',controllerRolusuario.ListarRolusuario);
+router.post('/guardaRolusuario',controllerRolusuario.GuardarRolusuario);
+router.get('/Rolusuario/:id', controllerRolusuario.ListarIdRolusuario);
+router.delete('/eliminarRolusuario/:id',controllerRolusuario.EliminarRolusuario);
+
+/* rutas de consultas */
+
+router.get('/consultaUsuarioXexperiencia', controllerConsultas.consultaUsuarioXexperiencia);
+router.get('/consultaUsuarioXpostulaciones', controllerConsultas.consultaUsuarioXpostulaciones);
+router.get('/consultaUsuarioXofertaEmpleo', controllerConsultas.consultaUsuarioXofertaEmpleo);
+router.get('/consultaOfertaEmpleoXpostulaciones', controllerConsultas.consultaOfertaEmpleoXpostulaciones);
+router.get('/consultausuarioXcategoria', controllerConsultas.consultausuarioXcategoria);
+router.get('/consultaofertaXcategoria', controllerConsultas.consultaofertaXcategoria);
+router.get('/consultaUsuarioxRol', controllerConsultas.consultaUsuarioxRol);
+
 
 module.exports = router;

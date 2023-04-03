@@ -14,19 +14,21 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     categoria.hasMany(models.intereses, {foreignKey: 'id_categoria'});
-    categoria.hasMany(models.detalleOferta, {foreignKey: 'id_categoria'});
+    categoria.hasMany(models.categoria, {foreignKey: 'id_categoria'});
     }
   }
   categoria.init({
 
-    id_Categoria: {
+    id_categoria: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+
     nombre: DataTypes.STRING,
     descripcion: DataTypes.STRING
+
   }, {
     sequelize,
     modelName: 'categoria',

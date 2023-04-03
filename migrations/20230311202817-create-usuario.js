@@ -19,6 +19,9 @@ module.exports = {
       nacionalidad: {
         type: Sequelize.STRING
       },
+      correo: {
+        type: Sequelize.STRING
+      },
       documento: {
         type: Sequelize.FLOAT
       },
