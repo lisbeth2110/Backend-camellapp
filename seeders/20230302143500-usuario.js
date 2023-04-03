@@ -9,6 +9,7 @@ module.exports = {
           documento: 1061544819,
           fotoPerfil: "url",
           telefono: "3246766502",
+          correo: "correo@email.com",
           direccion: "v/ el cairo - cajibio",
           username: "leyder",
           password: "12345678"
@@ -21,6 +22,7 @@ module.exports = {
           documento: 10615426429,
           fotoPerfil: "url",
           telefono: "3218759455",
+          correo: "correo@email.com",
           direccion: "cra9 n 63",
           username: "jhonc",
           password: "12345678"
@@ -33,6 +35,7 @@ module.exports = {
           documento: 1061531961,
           fotoPerfil: "url",
           telefono: "3242641297",
+          correo: "correo@email.com",
           direccion: "cll 5 n34",
           username: "yagami",
           password: "12345678"

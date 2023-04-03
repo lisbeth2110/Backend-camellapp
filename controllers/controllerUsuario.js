@@ -11,7 +11,7 @@ module.exports=
       .send(usuarios)).catch(error => res.status(400).send(error));
     },
     ListarIdUsuario(req, res) {
-   return usuarios.findAll({
+   return usuarios.findOne({
     where: {
       id_usuario: req.params.id 
     }

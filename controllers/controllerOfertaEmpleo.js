@@ -13,7 +13,7 @@ module.exports=
 
 
     ListarIdOfertaEmpleo(req, res) {
-    return ofertaEmpleos.findAll({
+    return ofertaEmpleos.findOne({
     where: {
       id_ofertaEmpleo: req.params.id 
     }
