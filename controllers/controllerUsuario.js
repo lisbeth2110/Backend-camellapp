@@ -5,21 +5,6 @@ const usuarios = require ("../models").usuario;
 module.exports=
 {   
 
-  // const example = async(req, res)=>{
-  //   try {
-  //     const usuarios = await usuarios.finOne({
-  //       where: {
-  //         id_usuario: req.params.id 
-  //       }
-  //     })
-  //     if(!usuarios){
-  //       return res.status(400).json("Usuario no existetes")
-  //     }
-  //     res.status(200).json(usuarios)
-  //   } catch (error) {
-      
-  //   }
-  // },
 
     ListarUsuario(req, res) {
       return usuarios.findAll({})
@@ -30,23 +15,12 @@ module.exports=
       return usuarios.findOne({
         where: {
         id_usuario: req.params.id 
-      }}).pipe(() => {
-        
-      })
+      }})
       
-      // .then(usuarios => res.status(200)
-      // .send(usuarios)).catch(error => res.status(400).send(error));
+      .then(usuarios => res.status(200)
+       .send(usuarios)).catch(error => res.status(400).send(error));
     },
-    ListarIdUsuario(req, res) {
-   return usuarios.findAll({
-    where: {
-      id_usuario: req.params.id 
-    }
-    })
-    .then(usuarios => res.status(200).send(usuarios))
-    .catch(error => res.status(400).send(error));
-    },
-
+   
 
    GuardarUsuario(req, res){
         usuario = usuarios  .create({

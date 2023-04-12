@@ -10,7 +10,7 @@ module.exports={
     },
 
     ListarIdCategoria(req, res) {
-   return categorias.findAll({
+   return categorias.findOne({
     where: {
       id_categoria: req.params.id 
     }

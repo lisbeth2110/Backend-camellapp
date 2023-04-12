@@ -12,7 +12,7 @@ module.exports=
 
 
   ListarIdRol(req, res) {
-   return rols.findAll({
+   return rols.findOne({
     where: {
       id_rol: req.params.id 
     }

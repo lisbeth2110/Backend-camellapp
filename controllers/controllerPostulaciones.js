@@ -12,7 +12,7 @@ module.exports=
 
 
     ListarIdPostulaciones(req, res) {
-   return postulacion.findAll({
+   return postulacion.findOne({
     where: {
       id_postulaciones: req.params.id 
     }

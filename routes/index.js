@@ -50,7 +50,6 @@ router.delete('/eliminarRol/:id',controllerRol.EliminarRol);
 router.get('/listarUsuario',controllerUsuario.ListarUsuario);
 router.get('/verUsuario/:id',controllerUsuario.verUsuario);
 router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
-router.get('/usuario/:id', controllerUsuario.ListarIdUsuario);
 router.put('/editarusuario/:id', controllerUsuario.Updateusuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
 
