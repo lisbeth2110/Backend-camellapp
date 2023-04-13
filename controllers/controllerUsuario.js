@@ -34,8 +34,8 @@ module.exports=
         
       })
       
-      // .then(usuarios => res.status(200)
-      // .send(usuarios)).catch(error => res.status(400).send(error));
+       .then(usuarios => res.status(200)
+       .send(usuarios)).catch(error => res.status(400).send(error));
     },
     ListarIdUsuario(req, res) {
    return usuarios.findOne({
