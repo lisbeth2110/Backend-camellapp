@@ -11,7 +11,7 @@ module.exports={
 
 
     ListarIdRolusuario(req, res) {
-   return  UsuarioRol.findAll({
+   return  UsuarioRol.findOne({
     where: {
       id_usuarioRol: req.params.id 
     }

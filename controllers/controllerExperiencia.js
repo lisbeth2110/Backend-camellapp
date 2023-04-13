@@ -12,7 +12,7 @@ module.exports=
 
 
     ListarIdExperiencia(req, res) {
-   return experiencias.findAll({
+   return experiencias.findOne({
     where: {
       id_experiencia: req.params.id 
     }
@@ -23,7 +23,6 @@ module.exports=
 
     UpdateExperiencia(req, res) {
       return experiencias.update({
-        id_usuario: req.body.id_usuario,
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         lugarDeTrabajo: req.body.lugarTrabajo,
