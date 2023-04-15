@@ -49,9 +49,12 @@ router.delete('/eliminarRol/:id',controllerRol.EliminarRol);
 /* rutas usuario */
 router.get('/listarUsuario',controllerUsuario.ListarUsuario);
 router.get('/verUsuario/:id',controllerUsuario.verUsuario);
-router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
+// router.post('/guardarUsuario',controllerUsuario.GuardarUsuario);
 router.put('/editarusuario/:id', controllerUsuario.Updateusuario);
 router.delete('/eliminarUsuario/:id',controllerUsuario.EliminarUsuario);
+// usuario incriptado
+router.post('/Login',controllerUsuario.login)
+router.post('/Registro',controllerUsuario.registro)
 
 /* rutas rol usuario */
 

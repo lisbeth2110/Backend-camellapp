@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
      usuario.hasMany(models.experiencia, {foreignKey: 'id_usuario'});
      usuario.hasMany(models.postulaciones, {foreignKey: 'id_usuario'}); 
      usuario.hasMany(models.ofertaEmpleo, {foreignKey: 'id_usuario'}); 
-
     }
   }
   usuario.init({
@@ -29,16 +28,14 @@ module.exports = (sequelize, DataTypes) => {
     nombres: DataTypes.STRING,
     apellidos: DataTypes.STRING,
     nacionalidad: DataTypes.STRING,
-    correo: DataTypes.STRING,
+    correo: DataTypes.STRING,                                                                                 
     documento: DataTypes.FLOAT,
     fotoPerfil: DataTypes.STRING,
     telefono: DataTypes.FLOAT,
     direccion: DataTypes.STRING,
     username: DataTypes.STRING,
-    password: DataTypes.STRING
+    password:DataTypes.STRING,
   }, {
-
-    
     sequelize,
     modelName: 'usuario',
     tableName: 'usuarios'
