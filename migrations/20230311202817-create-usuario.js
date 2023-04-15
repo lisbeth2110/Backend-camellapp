@@ -31,6 +31,9 @@ module.exports = {
       telefono: {
         type: Sequelize.FLOAT
       },
+      correo: {
+        type: Sequelize.STRING
+      },
       direccion: {
         type: Sequelize.STRING
       },

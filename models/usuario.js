@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     documento: DataTypes.FLOAT,
     fotoPerfil: DataTypes.STRING,
     telefono: DataTypes.FLOAT,
+    correo: DataTypes.STRING,
     direccion: DataTypes.STRING,
     username: DataTypes.STRING,
     password:DataTypes.STRING,
