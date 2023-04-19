@@ -4,8 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+// const bodyParser= require('body-parser')
+// const multer = require('multer');
+
+// app.use(bodyParser.urlencoded({extended: true}))
 
 var app = express();
 

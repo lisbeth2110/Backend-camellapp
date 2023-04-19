@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     titulo: DataTypes.STRING,
     salario: DataTypes.FLOAT,
     descripcion: DataTypes.STRING,
+    
     ubicacion: DataTypes.STRING,
     tipoDeContrato: DataTypes.STRING,
 
