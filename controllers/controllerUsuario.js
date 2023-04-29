@@ -9,6 +9,8 @@ const authConfig = require('../config/auth');
 
 module.exports=
 {   
+
+
     ListarUsuario(req, res) {
       return usuarios.findAll({})
       .then(usuarios => res.status(200)
@@ -33,7 +35,7 @@ module.exports=
           }
       }).then(usuarios => {
           if (!usuarios) {
-              res.status(400).json({ msg: "No se encontro ningun usuario registrado con este correo", status: "error"});
+              res.status(200).json({ msg: "No se encontro ningun usuario registrado con este correo", status: "error"});
           } else {
               if (bcrypt.compareSync(password, usuarios.password)) {
                   //creamos token
@@ -45,7 +47,7 @@ module.exports=
                       // token: token
                    });
               } else {
-                  res.status(400).json({ msg: "contraseña incorrecta", status: "error"})
+                  res.status(200).json({ msg: "contraseña incorrecta", status: "error"})
               }
             }
       }).catch(err =>{
@@ -55,16 +57,18 @@ module.exports=
   //registro
    registro(req,res){
       // //encriptamos contraseña
-       let {nombres, apellidos, nacionalidad, correo, documento, fotoPerfil, telefono, direccion, username, password} = req.body
+       let {nombres, apellidos, nacionalidad, ciudad, correo, documento, fotoPerfil, fechaNacimiento, telefono, direccion, username, password} = req.body
         let contrasena = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds));
      //crear usuarios
      return   usuarios.create({
       nombres:nombres,
       apellidos:apellidos,
       nacionalidad:nacionalidad,
+      ciudad:ciudad,
       correo:correo,
       documento:documento,
       fotoPerfil:fotoPerfil,
+      fechaNacimiento:fechaNacimiento,
       telefono:telefono,
       direccion:direccion,
       username:username,

@@ -63,6 +63,19 @@ module.exports=
           
       },
 
+      ConsultarpostulacionesxOferta(req, res) {    
+        return ofertaempleo.findOne({
+            include: {
+               model: postulaciones
+              },
+              where: {
+                id_ofertaEmpleo: req.params.id,
+            },
+          })
+            .then(ofertaempleo => res.status(200).send(ofertaempleo))
+            .catch(error => res.status(400).send(error));
+          
+      },
 
 
 

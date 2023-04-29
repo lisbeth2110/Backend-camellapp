@@ -25,9 +25,9 @@ module.exports=
    GuardarPostulaciones(req, res){
         postulaciones = postulacion.create({
                 id_usuario: req.body.id_usuario,
-                fecha: req.body.fecha,
+                id_ofertaEmpleo: req.body.id_ofertaEmpleo,
                 estado: req.body.estado,
-                id_ofertaEmpleo: req.body.id_ofertaEmpleo
+                fecha: new Date().toLocaleString(),
              
         }).then(postulacion => res.status(200).send(postulacion))
         .catch(error => res.status(400).send(error));

@@ -25,7 +25,13 @@ module.exports = {
       documento: {
         type: Sequelize.FLOAT
       },
+      ciudad: {
+        type: Sequelize.FLOAT
+      },
       fotoPerfil: {
+        type: Sequelize.STRING
+      },
+      fechaNacimiento: {
         type: Sequelize.STRING
       },
       telefono: {
