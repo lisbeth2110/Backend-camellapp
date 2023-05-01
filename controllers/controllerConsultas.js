@@ -1,7 +1,6 @@
 const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
 const categoria = require ("../models").categoria;
-const detalleoferta = require ("../models").detalleOferta;
 const ofertaempleo = require ("../models").ofertaEmpleo;
 const intereses = require ("../models").intereses;
 const postulaciones = require("../models").postulaciones;
@@ -112,13 +111,11 @@ module.exports=
     return ofertaempleo.findAll({
         include: {
            
-            model: detalleoferta,
-            include: {
-              model: categoria
-            }
-            
+            model: categoria,
           },
-
+          where: {
+            id_ofertaEmpleo: req.params.id,
+        },
       })
         .then(ofertaempleo => res.status(200).send(ofertaempleo))
         .catch(error => res.status(400).send(error));

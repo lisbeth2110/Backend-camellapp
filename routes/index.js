@@ -70,9 +70,10 @@ router.get('/consultaUsuarioXpostulaciones', controllerConsultas.consultaUsuario
 router.get('/consultaUsuarioXofertaEmpleo', controllerConsultas.consultaUsuarioXofertaEmpleo);
 router.get('/consultaOfertaEmpleoXpostulaciones', controllerConsultas.consultaOfertaEmpleoXpostulaciones);
 router.get('/consultausuarioXcategoria', controllerConsultas.consultausuarioXcategoria);
-router.get('/consultaofertaXcategoria', controllerConsultas.consultaofertaXcategoria);
+router.get('/consultarofertaXcategoria/:id', controllerConsultas.consultaofertaXcategoria);
 router.get('/consultaUsuarioxRol', controllerConsultas.consultaUsuarioxRol);
 
 router.get('/consultarpostulanteXoferta/:id', controllerConsultas.ConsultarpostulacionesxOferta);
 
 module.exports = router;
+
