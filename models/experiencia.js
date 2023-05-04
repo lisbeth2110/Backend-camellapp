@@ -34,7 +34,12 @@ module.exports = (sequelize, DataTypes) => {
     titulo: DataTypes.STRING,
     descripcion: DataTypes.STRING,
     lugarDeTrabajo: DataTypes.STRING,
-    experienciaDeTrabajo: DataTypes.STRING
+    experienciaDeTrabajo: DataTypes.STRING,
+
+    nombre: DataTypes.STRING,
+    celular: DataTypes.STRING,
+    correo: DataTypes.STRING,
+
   }, {
     sequelize,
     modelName: 'experiencia',

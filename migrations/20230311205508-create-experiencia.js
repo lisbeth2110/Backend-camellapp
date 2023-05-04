@@ -32,6 +32,16 @@ module.exports = {
       experienciaDeTrabajo: {
         type: Sequelize.STRING
       },
+
+      nombre: {
+        type: Sequelize.STRING
+      },
+      celular:{
+        type: Sequelize.STRING
+      },
+      correo:{
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

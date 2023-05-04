@@ -57,7 +57,7 @@ module.exports=
   //registro
    registro(req,res){
       // //encriptamos contraseña
-       let {nombres, apellidos, nacionalidad, ciudad, correo, documento, fotoPerfil, fechaNacimiento, telefono, direccion, username, password} = req.body
+       let {nombres, apellidos, nacionalidad, ciudad, correo, documento, fotoPerfil, fechaNacimiento, telefono, direccion, username, password,id_rol} = req.body
         let contrasena = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds));
      //crear usuarios
      return   usuarios.create({
@@ -72,7 +72,8 @@ module.exports=
       telefono:telefono,
       direccion:direccion,
       username:username,
-      password: contrasena
+      password: contrasena,
+      id_rol:id_rol
       }).then(usuarios => {
 
           //creamos token

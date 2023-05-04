@@ -110,7 +110,17 @@ module.exports=
   consultaofertaXcategoria(req, res) {    
     return ofertaempleo.findAll({
         include: {
-           
+            model: categoria,
+          },
+      })
+        .then(ofertaempleo => res.status(200).send(ofertaempleo))
+        .catch(error => res.status(400).send(error));
+      
+  },
+
+  consultaOfertaXCategoria(req, res) {    
+    return ofertaempleo.findAll({
+        include: {
             model: categoria,
           },
           where: {

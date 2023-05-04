@@ -37,9 +37,6 @@ module.exports = {
       telefono: {
         type: Sequelize.FLOAT
       },
-      correo: {
-        type: Sequelize.STRING
-      },
       direccion: {
         type: Sequelize.STRING
       },
@@ -48,6 +45,16 @@ module.exports = {
       },
       password: {
         type: Sequelize.STRING
+      },
+      id_rol: {
+        type: Sequelize.INTEGER,
+        references:{
+          model: {
+            tableName: 'rols',
+          },
+          key: 'id_rol'
+        },
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

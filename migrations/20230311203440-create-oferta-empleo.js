@@ -24,7 +24,9 @@ module.exports = {
       tipoDeContrato: {
         type: Sequelize.STRING
       },
-      
+      celular: {
+        type: Sequelize.INTEGER
+      },
       id_categoria: {
         type: Sequelize.INTEGER,
         references:{

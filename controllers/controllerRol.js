@@ -24,9 +24,8 @@ module.exports=
 
    GuardarRol(req, res){
         rol = rols  .create({
-                administrador : req.body.administrador,
-                postulante: req.body.postulante,
-                empleador: req.body.empleador
+                nombreRol : req.body.nombreRol,
+                
              
         }).then(rols => res.status(200).send(rols))
         .catch(error => res.status(400).send(error));
@@ -36,9 +35,8 @@ module.exports=
     },
     Updaterol(req, res) {
       return rols.update({
-        administrador : req.body.administrador,
-        postulante: req.body.postulante,
-        empleador: req.body.empleador
+        nombreRol : req.body.nombreRol,
+        
       }, {
           where: {
               id_rol: req.params.id,

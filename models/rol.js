@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       rol.hasMany(models.usuarioRol, {foreignKey: 'id_rol'});
-
+      rol.hasMany(models.usuario, {foreignKey: 'id_rol'});
     }
   }
   rol.init({
@@ -22,9 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    administrador: DataTypes.STRING,
-    postulante: DataTypes.STRING,
-    empleador: DataTypes.STRING
+    nombreRol: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'rol',

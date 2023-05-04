@@ -26,7 +26,10 @@ module.exports=
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         lugarDeTrabajo: req.body.lugarTrabajo,
-        exprienciaDeTrabajo: req.body.exprienciaDeTrabajo
+        exprienciaDeTrabajo: req.body.exprienciaDeTrabajo,
+        nombre: req.body.nombre,
+        celular: req.body.celular,
+        correo: req.body.correo
       
       }, {
           where: {
@@ -44,8 +47,10 @@ module.exports=
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
                 lugarDeTrabajo: req.body.lugarDeTrabajo,
-                exprienciaDeTrabajo: req.body.exprienciaDeTrabajo
-              
+                exprienciaDeTrabajo: req.body.exprienciaDeTrabajo,
+                nombre: req.body.nombre,
+                celular: req.body.celular,
+                correo: req.body.correo
              
         }).then(experiencias => res.status(200).send(experiencias))
         .catch(error => res.status(400).send(error));
