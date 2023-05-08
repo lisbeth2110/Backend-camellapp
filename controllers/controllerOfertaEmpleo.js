@@ -1,12 +1,17 @@
 const Sequelize = require('sequelize');
 const ofertaEmpleos= require ("../models").ofertaEmpleo;
+const categorias = require ("../models").categoria;
 
 module.exports=
 
 {   
 
     ListarOfertaEmpleo(req, res) {
-    return ofertaEmpleos.findAll({})
+    return ofertaEmpleos.findAll({
+      include: {
+        model: categorias,
+      },
+    })
     .then(ofertaEmpleos => res.status(200).send(ofertaEmpleos))
     .catch(error => res.status(400).send(error));
     },
@@ -45,16 +50,14 @@ module.exports=
             salario: req.body.salario,
             descripcion: req.body.descripcion,
             ubicacion: req.body.ubicacion,
+            celular: req.body.celular,
             tipoDeContrato: req.body.tipoDeContrato,
             id_categoria: req.body.id_categoria,
             id_usuario: req.body.id_usuario
-                
-             
         }).then(ofertaEmpleos => res.status(200).send(ofertaEmpleos))
         .catch(error => res.status(400).send(error));
             return(ofertaEmpleos.id); 
     },
-     
 
     EliminarOfertaEmpleo(req,res) {
       return ofertaEmpleos.destroy({

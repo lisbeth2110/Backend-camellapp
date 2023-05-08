@@ -35,6 +35,7 @@ router.delete('/eliminarOfertaEmpleo/:id',controllerOfertaEmpleo.EliminarOfertaE
 /* rutas postulaciones */
 router.get('/listarPostulaciones',controllerPostulaciones.ListarPostulaciones);
 router.post('/guardarPostulacion',controllerPostulaciones.GuardarPostulaciones);
+
 router.get('/Postulaciones/:id', controllerPostulaciones.ListarIdPostulaciones);
 router.put('/editarPostulaciones/:id', controllerPostulaciones.Updatepostulaciones);
 router.delete('/eliminarPostulaciones/:id',controllerPostulaciones.EliminarPostulaciones);
@@ -73,6 +74,7 @@ router.get('/consultausuarioXcategoria', controllerConsultas.consultausuarioXcat
 router.get('/consultaUsuarioxRol', controllerConsultas.consultaUsuarioxRol);
 
 router.get('/consultarofertaXcategoria', controllerConsultas.consultaofertaXcategoria);
+
 router.get('/consultarpostulanteXoferta/:id', controllerConsultas.ConsultarpostulacionesxOferta);
 router.get('/consultarOfertaXcategoria/:id', controllerConsultas. consultaOfertaXCategoria);
 

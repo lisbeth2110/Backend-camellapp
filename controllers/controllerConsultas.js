@@ -65,7 +65,8 @@ module.exports=
       ConsultarpostulacionesxOferta(req, res) {    
         return ofertaempleo.findOne({
             include: {
-               model: postulaciones
+               model: postulaciones,
+               
               },
               where: {
                 id_ofertaEmpleo: req.params.id,
@@ -119,7 +120,7 @@ module.exports=
   },
 
   consultaOfertaXCategoria(req, res) {    
-    return ofertaempleo.findAll({
+    return ofertaempleo.findOne({
         include: {
             model: categoria,
           },

@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     titulo: DataTypes.STRING,
+    
     salario: DataTypes.FLOAT,
     descripcion: DataTypes.STRING,
     celular: DataTypes.INTEGER,
