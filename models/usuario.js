@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
      usuario.hasMany(models.experiencia, {foreignKey: 'id_usuario'});
      usuario.hasMany(models.postulaciones, {foreignKey: 'id_usuario'}); 
      usuario.hasMany(models.ofertaEmpleo, {foreignKey: 'id_usuario'}); 
+     usuario.belongsTo(models.rol, {foreignKey: 'id_rol'});
     }
   }
   usuario.init({
@@ -28,9 +29,9 @@ module.exports = (sequelize, DataTypes) => {
     nombres: DataTypes.STRING,
     apellidos: DataTypes.STRING,
     nacionalidad: DataTypes.STRING,
-    ciudad: DataTypes.STRING, 
     correo: DataTypes.STRING,                                                                                 
     documento: DataTypes.FLOAT,
+    ciudad: DataTypes.STRING, 
     fotoPerfil: DataTypes.STRING,
     fechaNacimiento:DataTypes.STRING,
     telefono: DataTypes.FLOAT,
@@ -38,6 +39,16 @@ module.exports = (sequelize, DataTypes) => {
     direccion: DataTypes.STRING,
     username: DataTypes.STRING,
     password:DataTypes.STRING,
+    id_rol:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: {
+          tableName:'rols',
+        },
+        key: 'id_rol'
+      },
+      allowNull: false
+    },
   }, {
     sequelize,
     modelName: 'usuario',

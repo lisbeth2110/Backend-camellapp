@@ -1,67 +1,15 @@
 const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
-const categoria = require ("../models").categoria;
+const categorias = require ("../models").categoria;
 const ofertaempleo = require ("../models").ofertaEmpleo;
-const intereses = require ("../models").intereses;
 const postulaciones = require("../models").postulaciones;
-const experiencia = require ("../models").experiencia;
-const rol = require ("../models").rols;
-const usuario = require ("../models").usuario;
-const usuarioRol = require ("../models").usuarioRols;
+const usuarios = require("../models").usuario;
+const rols = require("../models").rol;
 
 
 
 module.exports=
 {
-    consultaUsuarioXexperiencia(req, res) {    
-        return usuario.findAll({
-            include: {
-               model: experiencia
-              }
-    
-          })
-            .then(usuario => res.status(200).send(usuario))
-            .catch(error => res.status(400).send(error));
-          
-      },
-
-      consultaUsuarioXpostulaciones(req, res) {    
-        return usuario.findAll({
-            include: {
-               model: postulaciones
-              }
-    
-          })
-            .then(usuario => res.status(200).send(usuario))
-            .catch(error => res.status(400).send(error));
-          
-      },
-
-
-      consultaUsuarioXofertaEmpleo(req, res) {    
-        return usuario.findAll({
-            include: {
-               model: ofertaempleo
-              }
-    
-          })
-            .then(usuario => res.status(200).send(usuario))
-            .catch(error => res.status(400).send(error));
-          
-      },
-
-      consultaOfertaEmpleoXpostulaciones(req, res) {    
-        return ofertaempleo.findAll({
-            include: {
-               model: postulaciones
-              }
-    
-          })
-            .then(ofertaempleo => res.status(200).send(ofertaempleo))
-            .catch(error => res.status(400).send(error));
-          
-      },
-
       ConsultarpostulacionesxOferta(req, res) {    
         return ofertaempleo.findOne({
             include: {
@@ -77,59 +25,39 @@ module.exports=
           
       },
 
-
-
-     consultaUsuarioxRol(req, res) {    
-        return usuario.findAll({
-            include: {
-               model: rol,
-               include:{
-                model: usuarioRol
-              },
-            },
-          })
-            .then(usuario => res.status(200).send(usuario))
-            .catch(error => res.status(400).send(error));
-          
-      },
-
-  consultausuarioXcategoria(req, res) {    
-    return usuario.findAll({
-        include: {
-           model: intereses,
-           include:{
-            model: categoria
-           }
-          },
-
-      })
-        .then(usuario => res.status(200).send(usuario))
-        .catch(error => res.status(400).send(error));
-      
-  },
-
   consultaofertaXcategoria(req, res) {    
     return ofertaempleo.findAll({
         include: {
-            model: categoria,
+            model: categorias,
           },
       })
         .then(ofertaempleo => res.status(200).send(ofertaempleo))
+        .catch(error => res.status(400).send(error));
+      
+  },
+  
+  consultaofertaidXcategoria(req, res) {    
+    return ofertaempleo.findOne({
+        include: {
+            model: categorias,
+          },
+          where:{
+            id_ofertaEmpleo: req.params.id
+          }
+      })
+        .then(ofertaempleo => res.status(200).send(ofertaempleo))
+        .catch(error => res.status(400).send(error));
+      
+  },
+  consultausuariosXrol(req, res) {    
+    return usuarios.findAll({
+        include: {
+            model: rols,
+          },
+      })
+        .then(usuarios => res.status(200).send(usuarios))
         .catch(error => res.status(400).send(error));
       
   },
 
-  consultaOfertaXCategoria(req, res) {    
-    return ofertaempleo.findOne({
-        include: {
-            model: categoria,
-          },
-          where: {
-            id_ofertaEmpleo: req.params.id,
-        },
-      })
-        .then(ofertaempleo => res.status(200).send(ofertaempleo))
-        .catch(error => res.status(400).send(error));
-      
-  },
 }

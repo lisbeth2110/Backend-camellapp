@@ -30,35 +30,36 @@ module.exports=
     UpdateofertaEmpleo(req, res) {
       return ofertaEmpleos.update({
         titulo: req.body.titulo,
+        correo: req.body.correo,    
         salario: req.body.salario,
         descripcion: req.body.descripcion,
         ubicacion: req.body.ubicacion,
-        tipoDeContrato: req.body.tipoDeContrato,
+        duracion: req.body.duracion,
+        celular: req.body.celular,
       }, {
           where: {
               id_ofertaEmpleo: req.params.id,
           },
       })
-
       .then((ofertaEmpleos) => { res.json(ofertaEmpleos);})
-          .catch(error => res.status(400).send(error))
-  },
+      .catch(error => res.status(400).send(error))
 
+  },
    GuardarOfertaEmpleo(req, res){
          ofertaEmpleo = ofertaEmpleos.create({
             titulo: req.body.titulo,
+            correo: req.body.correo,
             salario: req.body.salario,
             descripcion: req.body.descripcion,
             ubicacion: req.body.ubicacion,
+            duracion: req.body.duracion,
             celular: req.body.celular,
-            tipoDeContrato: req.body.tipoDeContrato,
             id_categoria: req.body.id_categoria,
             id_usuario: req.body.id_usuario
         }).then(ofertaEmpleos => res.status(200).send(ofertaEmpleos))
         .catch(error => res.status(400).send(error));
             return(ofertaEmpleos.id); 
     },
-
     EliminarOfertaEmpleo(req,res) {
       return ofertaEmpleos.destroy({
         where: {

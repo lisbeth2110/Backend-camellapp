@@ -12,6 +12,9 @@ module.exports = {
       titulo: {
         type: Sequelize.STRING
       },
+      correo: {
+        type: Sequelize.STRING
+      },
       salario: {
         type: Sequelize.FLOAT
       },
@@ -21,7 +24,7 @@ module.exports = {
       ubicacion: {
         type: Sequelize.STRING
       },
-      tipoDeContrato: {
+      duracion: {
         type: Sequelize.STRING
       },
       celular: {

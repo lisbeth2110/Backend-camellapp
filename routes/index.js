@@ -66,17 +66,11 @@ router.delete('/eliminarRolusuario/:id',controllerRolusuario.EliminarRolusuario)
 
 /* rutas de consultas */
 
-router.get('/consultaUsuarioXexperiencia', controllerConsultas.consultaUsuarioXexperiencia);
-router.get('/consultaUsuarioXpostulaciones', controllerConsultas.consultaUsuarioXpostulaciones);
-router.get('/consultaUsuarioXofertaEmpleo', controllerConsultas.consultaUsuarioXofertaEmpleo);
-router.get('/consultaOfertaEmpleoXpostulaciones', controllerConsultas.consultaOfertaEmpleoXpostulaciones);
-router.get('/consultausuarioXcategoria', controllerConsultas.consultausuarioXcategoria);
-router.get('/consultaUsuarioxRol', controllerConsultas.consultaUsuarioxRol);
 
 router.get('/consultarofertaXcategoria', controllerConsultas.consultaofertaXcategoria);
-
+router.get('/consultarOfertaXcategoria/:id', controllerConsultas.consultaofertaidXcategoria);
 router.get('/consultarpostulanteXoferta/:id', controllerConsultas.ConsultarpostulacionesxOferta);
-router.get('/consultarOfertaXcategoria/:id', controllerConsultas. consultaOfertaXCategoria);
+router.get('/consultarUsuarioXrol', controllerConsultas.consultausuariosXrol);
 
 module.exports = router;
 

@@ -26,7 +26,7 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       ciudad: {
-        type: Sequelize.FLOAT
+        type: Sequelize.STRING
       },
       fotoPerfil: {
         type: Sequelize.STRING

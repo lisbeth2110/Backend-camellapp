@@ -2,15 +2,13 @@
 const express = require('express');
 const { QueryError } = require('sequelize');
 const  router = express.Router();
-const usuarios = require ("../models").usuario;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
-
+const usuarios = require ("../models").usuario;
+const rol = require ("../models").rol;
 module.exports=
 {   
-
-
     ListarUsuario(req, res) {
       return usuarios.findAll({})
       .then(usuarios => res.status(200)

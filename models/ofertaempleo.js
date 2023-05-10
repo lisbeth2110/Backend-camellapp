@@ -20,17 +20,17 @@ module.exports = (sequelize, DataTypes) => {
     id_ofertaEmpleo: {
       allowNull: false,
       autoIncrement: true,
+      
       primaryKey: true,
       type: DataTypes.INTEGER
     },
     titulo: DataTypes.STRING,
-    
+    correo: DataTypes.STRING,
     salario: DataTypes.FLOAT,
     descripcion: DataTypes.STRING,
-    celular: DataTypes.INTEGER,
     ubicacion: DataTypes.STRING,
-    tipoDeContrato: DataTypes.STRING,
-
+    duracion: DataTypes.STRING,
+    celular: DataTypes.INTEGER,
     id_categoria:{
       type: DataTypes.INTEGER,
       references:{
