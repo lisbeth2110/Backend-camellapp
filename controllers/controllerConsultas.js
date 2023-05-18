@@ -14,7 +14,7 @@ module.exports=
         return ofertaempleo.findOne({
             include: {
                model: postulaciones,
-               
+                
               },
               where: {
                 id_ofertaEmpleo: req.params.id,

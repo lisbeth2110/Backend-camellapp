@@ -26,7 +26,7 @@ module.exports=
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         lugarDeTrabajo: req.body.lugarTrabajo,
-        exprienciaDeTrabajo: req.body.exprienciaDeTrabajo,
+        experienciaDeTrabajo: req.body.experienciaDeTrabajo,
         nombre: req.body.nombre,
         celular: req.body.celular,
         correo: req.body.correo
@@ -47,7 +47,7 @@ module.exports=
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
                 lugarDeTrabajo: req.body.lugarDeTrabajo,
-                exprienciaDeTrabajo: req.body.exprienciaDeTrabajo,
+                experienciaDeTrabajo: req.body.experienciaDeTrabajo,
                 nombre: req.body.nombre,
                 celular: req.body.celular,
                 correo: req.body.correo
