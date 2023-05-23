@@ -71,6 +71,6 @@ router.get('/consultarofertaXcategoria', controllerConsultas.consultaofertaXcate
 router.get('/consultarOfertaXcategoria/:id', controllerConsultas.consultaofertaidXcategoria);
 router.get('/consultarpostulanteXoferta/:id', controllerConsultas.ConsultarpostulacionesxOferta);
 router.get('/consultarUsuarioXrol', controllerConsultas.consultausuariosXrol);
-
+// router.get('/consultarusuraioXpostulacion', controllerConsultas.consultarusuraioXpostulacion);
 module.exports = router;
 

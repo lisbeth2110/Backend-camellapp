@@ -14,7 +14,10 @@ module.exports=
         return ofertaempleo.findOne({
             include: {
                model: postulaciones,
+               include: {
+                model: usuarios,
                 
+               },
               },
               where: {
                 id_ofertaEmpleo: req.params.id,
@@ -59,5 +62,15 @@ module.exports=
         .catch(error => res.status(400).send(error));
       
   },
+  // consultarusuraioXpostulacion(req, res) {    
+  //   return postulaciones.findAll({
+  //       include: {
+  //           model: usuarios,
+  //         },
+  //     })
+  //       .then(usuarios => res.status(200).send(usuarios))
+  //       .catch(error => res.status(400).send(error));
+      
+  // },
 
 }
